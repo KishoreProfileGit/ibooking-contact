@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en" class="js-focus-visible" data-js-focus-visible="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="https://ibooking.co.uk/custom_assets/image/ibooking-fav-icon.png">
+
+    <title>ibooking contact form</title>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+
+.breadcrumb.text-white .breadcrumb-item {
+    color: #fff;
+}
+.breadcrumb-item.active {
+    color: #868e96;
+}
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem;
+}
+
+        .fab {
+            font-family: "Font Awesome 5 Brands";
+        }
+
+        .fa,
+        .fab,
+        .fal,
+        .far,
+        .fas {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+        }
+
+        .allowed-submit {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        .valid-input {
+            border: 1px solid green !important;
+        }
+
+        .valid-textarea {
+            border: 1px solid green !important;
+        }
+
+        .invalid-textarea {
+            border: 1px solid red !important;
+        }
+
+        .invalid-input {
+            border: 1px solid red !important;
+        }
+
+        .invalid-msg {
+            color: red;
+        }
+
+        @font-face {
+            font-weight: 400;
+            font-style: normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 500;
+            font-style: normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 700;
+            font-style: normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 900;
+            font-style: normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+        }
+
+        .footer-bg {
+            background-color: #f2f2f7;
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+        }
+
+        .fa-instagram {
+            /* background:#868e96; */
+            color: #868e96;
+        }
+
+        .fa-linkedin {
+            /* background:#868e96; */
+            color: #868e96;
+        }
+
+
+        .fa-facebook {
+            /* background:#868e96; */
+            color: #868e96;
+        }
+
+        .fa-twitter {
+            /* background:#868e96; */
+            color: #868e96;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+        }
+
+        .navbar-brand img {
+            width: 180px;
+        }
+    </style>
+</head>
+
+
+<!-- Header Start-->
+<header class="header cus-header">
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white px-2 px-lg-0 scrolled-nav" id="cus-navbar">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand py-1" href="#"><img src="img/ibooking-logo-black.png" alt="ibooking" class="navbar-logo"></a>
+                <div class="d-none" id="cus-input-group">
+                    <form class="form-inline d-none d-lg-flex" action="#" id="search">
+                        <div class="input-label-absolute input-label-absolute-left input-reset input-expand ml-lg-2 ml-xl-3">
+                            <label class="label-absolute" for="search_search"><i class="fa fa-search"></i><span class="sr-only">What're you searching for?</span></label>
+                            <input class="form-control form-control-lg border-1 shadow-1 bg-white py-2" id="search_search" placeholder="What&#39;re you searching for?" aria-label="Search">
+                            <button class="btn btn-reset btn-sm" type="reset"><i class="fa-times fas"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right cus-navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" id="cus-navbar-toggle" style="color: rgb(16, 25, 40);"><i class="fa fa-bars"></i></button>
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse custom-navbar-collapse " id="navbarCollapse">
+                <div class="d-none  col-4" id="cus-input-group">
+                    <form class="form-inline mt-4 mb-2 d-sm-none" action="#" id="searchcollapsed">
+                        <div class="input-label-absolute input-label-absolute-left input-reset w-100">
+                            <label class="label-absolute" for="searchcollapsed_search"><i class="fa fa-search"></i><span class="sr-only">What are you looking for?</span></label>
+                            <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="searchcollapsed_search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-reset btn-sm" type="reset"><i class="fa-times fas">           </i></button>
+                        </div>
+                    </form>
+                </div>
+                <ul class="navbar-nav ml-auto">
+                    <!-- /Megamenu end-->
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link pl-2 mr-4" href="#" style="color: rgb(16, 25, 40);">For Businesses </a> </li>
+
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link pl-2 mr-4 " href="#" style="color: rgb(16, 25, 40);">Login  </a> </li>
+
+
+
+                    <div class="d-block d-lg-none cus-menu" aria-labelledby="docsDropdownMenuLink">
+                        <div class="mt-3">
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a class="dropdown-item menbar_a" href="#" style="color: rgb(16, 25, 40);">Book a Service 
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                            <div class="dropdown-divider mb-0"></div>
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a class="dropdown-item menbar_a" href="#" style="color: rgb(16, 25, 40);">Login
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                            <div class="dropdown-divider mb-0"></div>
+
+
+                            <p class="dropdown-header font-weight-normal menbar_title">BUSINESSES</p>
+
+
+                            <div class="d-flex justify-content-center align-items-center  pt-1">
+                                <a class="dropdown-item menbar_a" href="#" style="color: rgb(16, 25, 40);">Business Sign up
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                            <div class="dropdown-divider mb-0"></div>
+                            <p class="dropdown-header font-weight-normal menbar_title">CONNECT WITH US</p>
+                            <div class="d-flex justify-content-center align-items-center pt-1">
+                                <a class="dropdown-item menbar_a " href="#" style="color: rgb(16, 25, 40);">About Us
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a class="dropdown-item menbar_a" href="#" style="color: rgb(16, 25, 40);">FAQ
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a class="dropdown-item menbar_a" href="#" style="color: rgb(16, 25, 40);">Blog
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a class="dropdown-item menbar_a" href="#" style="color: rgb(16, 25, 40);">Contact Us
+                              <i class="fa fa-angle-right float-right menbar_arrow"></i>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <li class="nav-item dropdown d-none d-lg-block">
+                        <a class="nav-link" id="docsDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(16, 25, 40);">
+                 <i class="fa fa-bars fa-lg"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right cus-menu" aria-labelledby="docsDropdownMenuLink">
+                            <p class="dropdown-header font-weight-normal">CUSTOMERS</p>
+
+                            <a class="dropdown-item" href="#" style="color: rgb(16, 25, 40);">Book a Service </a>
+
+                            <div class="dropdown-divider"></div>
+                            <p class="dropdown-header font-weight-normal">BUSINESSES</p>
+                            <a class="dropdown-item" href="#" style="color: rgb(16, 25, 40);">Business Sign up </a>
+
+                            <div class="dropdown-divider mb-0"></div>
+                            <p class="dropdown-header font-weight-normal">CONNECT WITH US</p>
+                            <a class="dropdown-item" href="#" style="color: rgb(16, 25, 40);">About Us </a>
+                            <a class="dropdown-item" href="#" style="color: rgb(16, 25, 40);">FAQ</a>
+                            <a class="dropdown-item" href="#" style="color: rgb(16, 25, 40);">Blog</a>
+                            <a class="dropdown-item" href="#" style="color: rgb(16, 25, 40);">Contact Us</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /Navbar -->
+</header>
+<!-- /Header End -->
+
+<!-- Hero Section-->
+<!-- <script type="text/javascript" async="" src="./Contact Us _ Get in touch with ibooking_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-H6agjAsIibNdraTEKloEQaK71A6JbG9q3R29vQr9QPSuqEIyYcoRDHIjh1XvEFQX"></script> -->
+<!-- <script src="./Contact Us _ Get in touch with ibooking_files/api.js.download" async="" defer=""></script> -->
+<section class="hero  text-white dark-overlay mt-5">
+    <img class="bg-image" src="img/contact_bg.png" alt="[PAGENAME]">
+    <div class="container overlay-content">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb text-white justify-content-center no-border mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Get in touch with us </li>
+        </ol>
+        <h1 class="hero-heading">Get in touch with us</h1>
+    </div>
+</section>
+
+<body class="bg-light">
+
+
+
+    <div class="container">
+        <div class="py-5 text-center">
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 order-md-2 mt-5 mb-4">
+
+
+                <h6>General Enquiries</h6>
+                <p><small>We're here to help! The fostest way to get in touch with ibooking team is via the online form. Please note that we are not the booking provider.</small></p>
+
+                <h6>Customer Enquiries</h6>
+                <p><small>If you already have a booking and need to get in touch with the supplier, please login to your online account to view the bookings details and the provider information.</small><br><small><b class="text-success">- Customer login</b></small></p>
+
+
+                <h6>Business Enquiries</h6>
+                <p><small>If you are a business and would like to learn more about joining the ibooking platform, please visit the our business support page to learn more.</small><br><small><b class="text-success">- Customer login</b></small></p>
+
+
+
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h4 class="mb-3">How can we help ?</h4>
+
+
+                <form method="post" id="myForm" name="myForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 form-group">
+                            <label for="firstName"><h6>Your Name *</h6></label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="" required="">
+                            <div class="first-name-msg"></div>
+                        </div>
+                        <div class="col-md-6 mb-3 form-group">
+                            <label for="lastName"><h6>Your Surname *</h6></label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Enter your surname" value="" required="">
+                            <div class="last-name-msg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3 form-group">
+                            <label for="email"><h6>Your Email *</h6></label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                            <div class="email-msg"></div>
+                        </div>
+                        <div class="col-md-6 mb-3 form-group">
+                            <label for="phone"><h6>Your Phone No *</h6></label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter your contact number.">
+                            <div class="phone-msg"></div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12 mb-3 form-group">
+                            <label for="subject"><h6>Your Subject *</h6></label>
+                            <input type="text" class="form-control" id="subject" placeholder="Enter your subject">
+                            <div class="subject-msg"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-3 form-group">
+
+                            <label for="message"><h6>Your Message </h6></label>
+                            <textarea class="form-control" rows="4"></textarea>
+
+                        </div>
+                    </div>
+
+                               
+                <div class="g-recaptcha mt-4" id="rcaptcha"  data-sitekey="6LfV58IbAAAAAFgMyviiOKaGCKp7jVqVzJGHcMyd"></div>
+<span id="captcha" style="color:red" /></span> 
+
+                    <div class="form-group">
+                        <input type="submit" value="Send message" id="submit-btn" class="bg-Dgray contactsubmit allowed-submit  mt-4 mb-5" disabled="desabled">
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class=" py-5 footer-bg">
+      <div class="container">
+      <div class="row ">
+       
+        <div class="col-sm-5">
+          <h6>About ibooking</h6>
+          <p><small>ibooking.co.uk is a cloud based booking management software which allows small business to manage their own bookings with convenience.</small></p>
+          
+          <button type="button" class="btn btn-md btn-white pl-5 pr-5 mr-3"><small>Business</small></button>
+          <button type="button" class="btn btn-md btn-success pl-5 pr-5"><small>Customer</small></button>
+        </div>
+        <div class="col-sm-1">
+          </div>
+        <div class="col-sm-2">
+          <h6>Company</h6>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#"><small>Search Item</small></a></li>
+            <li><a class="text-muted" href="#"><small>Pricing</small></a></li>
+            <li><a class="text-muted" href="#"><small>Business Profile</small></a></li>
+            <li><a class="text-muted" href="#"><small>Contact</small></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h6>Legal Stuff</h6>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#"><small>Privacy Policy</small></a></li>
+            <li><a class="text-muted" href="#"><small>Terms & Conditions</small></a></li>
+            <li><a class="text-muted" href="#"><small>FAQ</small></a></li>
+            
+          </ul>
+        </div>
+       
+
+        <div class="col-sm-2">
+          <h6>Get in touch</h6>
+          <div class="">
+          <a href="#"><i class="fa fa-twitter ml-4 mr-2"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <br>
+          <a href="#"><i class="fa fa-instagram ml-4 mr-2"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    
+    </footer>
+
+    <div class="py-2 font-weight-light text-gray-300 border-top" style="background:#E8E8EE;">
+      <div class="container ">
+         <div class="row align-items-center">
+            <div class="col-md-6">
+               <p class="text-sm mb-0 text-lg-left text-center text-Lgray"><small>© 2020, 
+                  <a href="#" class="font-weight-bold text-Lgray" target="_blank">ibooking.co.uk</a>.  All rights reserved.
+               </small>
+                </p>
+            </div>
+            <div class="col-md-6">
+               <p class="text-sm mb-0 text-lg-right text-center text-Lgray"><small>Designed By  
+                  <a href="#" class="font-weight-bold text-Lgray" target="_blank">MOBO </a>
+                </small> 
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="validate.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+
+function get_action(form) 
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+         document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+    }
+}
+
+</script>
+
+
+</body>
+
+</html>
